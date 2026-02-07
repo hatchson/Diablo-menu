@@ -1,4 +1,5 @@
-﻿using StupidTemplate;
+﻿using rainxyz.Mods;
+using StupidTemplate;
 using StupidTemplate.Classes;
 using StupidTemplate.Mods;
 using static StupidTemplate.Menu.Main;
@@ -28,6 +29,8 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Room Mods", method =() => currentCategory = 4, isTogglable = false, toolTip = "Opens the room mods tab."},
                 new ButtonInfo { buttonText = "Movement Mods", method =() => currentCategory = 5, isTogglable = false, toolTip = "Opens the movement mods tab."},
                 new ButtonInfo { buttonText = "Safety Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the safety mods tab."},
+                new ButtonInfo { buttonText = "Advantages", method =() => currentCategory = 7, isTogglable = false, toolTip = "Opens the advantages tab."},
+                new ButtonInfo { buttonText = "Fun", method =() => currentCategory = 8, isTogglable = false, toolTip = "Fun Mods."},
             },
 
             new ButtonInfo[] { // Settings [1]
@@ -75,6 +78,15 @@ namespace StupidTemplate.Menu
                 new ButtonInfo {buttonText = "Instant Tag All", method =() => Advantages.TagAllV2(), toolTip = "Instantly tags all players in the room."},
                 new ButtonInfo {buttonText = "Tag Gun", method =() => Advantages.TagGunv2(), toolTip = "Instantly Tags Whoever The Gun Is Shooting At"},
 
+            }
+            new ButtonInfo[] {
+                new ButtonInfo {buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
+                new ButtonInfo {buttonText = "Spin Bug", method =() => Fun.BugMixer(), toolTip = "Makes the bug spin." },
+                new ButtonInfo {buttonText = "Bug Telekineses", method =() => Fun.TelekenisisBug(), toolTip = "Makes the bug follow your head, fun with spin bug."},
+                new ButtonInfo {buttonText = "Bug Hat", method =() => Fun.BugTeleport(), toolTip = "Bug Hat Makes the bug sit on your head, also fun with spin bug."},
+                new ButtonInfo {buttonText = "Bug Head", method =() => Fun.BugHead(), toolTip = "Makes The Bug Teleport To the bottom of your body "},
+                new ButtonInfo {buttonText = "Bug Spaz", method =() => Fun.BugSpaz(), toolTip = "Makes The Bug spaz, use this with telekineses bug to make the bug not be able to move around"},
+                
             }
         };
     }
