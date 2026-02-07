@@ -3,22 +3,22 @@
     Diablo Menu
   </h1>
   <br>
-  <img src="https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Diablo+Menu+Banner" alt="Diablo Menu Banner" width="70%" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(255,0,0,0.35);">
+  <img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000456071fd9c1ff90892bb4a9c&ts=491803&p=fs&cid=1&sig=c35746976315635ca1f61d6a459eb14e1f53444e981a9adfd7ec39d5c071197c&v=0" alt="Diablo Menu Banner" width="70%" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(255,0,0,0.35);">
   <br><br>
   <strong>The most powerful, customizable, and stylish Gorilla Tag menu out there.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/hatchson/DiabloMenu/releases/latest">
+  <a href="https://github.com/hatchson/Diablo-Menu/releases/latest">
     <img src="https://img.shields.io/github/v/release/hatchson/DiabloMenu?color=red&label=Latest%20Release&logo=github" alt="Latest Release">
   </a>
-  <a href="https://github.com/hatchson/DiabloMenu/stargazers">
+  <a href="https://github.com/hatchson/Diablo-Menu/stargazers">
     <img src="https://img.shields.io/github/stars/hatchson/DiabloMenu?style=social" alt="Stars">
   </a>
-  <a href="https://github.com/hatchson/DiabloMenu/issues">
+  <a href="https://github.com/hatchson/Diablo-Menu/issues">
     <img src="https://img.shields.io/github/issues/hatchson/DiabloMenu?color=red" alt="Issues">
   </a>
-  <a href="https://github.com/hatchson/DiabloMenu/blob/main/LICENSE">
+  <a href="https://github.com/hatchson/Diablo-Menu/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/hatchson/DiabloMenu?color=red" alt="License">
   </a>
 </p>
