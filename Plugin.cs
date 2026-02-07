@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using static StupidTemplate.Menu.BoardManager;
 
 namespace StupidTemplate
 {
@@ -11,5 +12,6 @@ namespace StupidTemplate
 
         public void OnPlayerSpawned() =>
             Patches.PatchHandler.PatchAll();
+            Menu.BoardManager.CreateCustomBoards();
     }
 }

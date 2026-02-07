@@ -26,7 +26,7 @@
 
 ## 🔥 Features
 
-Full feature list → [View complete features here](https://hatchson.github.io/DiabloMenu/features.txt)
+Full feature list → [View complete features here](https://hatchson.github.io/DiabloMenu/Features.txt)
 
 *(Once the link is live, this section will show the latest features directly. For now, here's a preview/example structure based on typical GT menus — update this when your txt file is online!)*
 
