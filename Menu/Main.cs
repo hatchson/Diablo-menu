@@ -48,6 +48,8 @@ namespace StupidTemplate.Menu
                         {
                             CreateMenu();
                             RecenterMenu(rightHanded, keyboardOpen);
+                        BoardManager.CreateCustomBoards();
+                        
                             if (reference == null)
                                 CreateReference(rightHanded);
                         }
@@ -125,6 +127,7 @@ namespace StupidTemplate.Menu
 
                 ColorChanger colorChanger = menuBackground.AddComponent<ColorChanger>();
                 colorChanger.colors = backgroundColor;
+            MenuRoundObj(menuBackground);
 
             // Canvas
                 canvasObject = new GameObject();
@@ -224,7 +227,8 @@ namespace StupidTemplate.Menu
                         rectt.sizeDelta = new Vector2(0.2f, 0.03f);
                         rectt.localPosition = new Vector3(0.064f, 0f, 0.23f);
                         rectt.rotation = Quaternion.Euler(new Vector3(180f, 90f, 90f));
-                    }
+                MenuRoundObj(disconnectbutton);
+            }
 
                 // Page Buttons
                     GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -234,7 +238,7 @@ namespace StupidTemplate.Menu
                     gameObject.GetComponent<BoxCollider>().isTrigger = true;
                     gameObject.transform.parent = menu.transform;
                     gameObject.transform.rotation = Quaternion.identity;
-                    gameObject.transform.localScale = new Vector3(0.09f, 0.2f, 0.9f);
+                    gameObject.transform.localScale = new Vector3(0.08f, 0.15f, 0.84f);
                     gameObject.transform.localPosition = new Vector3(0.56f, 0.65f, 0);
                     gameObject.GetComponent<Renderer>().material.color = buttonColors[0].colors[0].color;
                     gameObject.AddComponent<Classes.Button>().relatedText = "PreviousPage";
@@ -271,7 +275,7 @@ namespace StupidTemplate.Menu
                     gameObject.GetComponent<BoxCollider>().isTrigger = true;
                     gameObject.transform.parent = menu.transform;
                     gameObject.transform.rotation = Quaternion.identity;
-                    gameObject.transform.localScale = new Vector3(0.09f, 0.2f, 0.9f);
+                    gameObject.transform.localScale = new Vector3(0.08f, 0.15f, 0.84f);
                     gameObject.transform.localPosition = new Vector3(0.56f, -0.65f, 0);
                     gameObject.GetComponent<Renderer>().material.color = buttonColors[0].colors[0].color;
                     gameObject.AddComponent<Classes.Button>().relatedText = "NextPage";
@@ -298,11 +302,13 @@ namespace StupidTemplate.Menu
                     component.sizeDelta = new Vector2(0.2f, 0.03f);
                     component.localPosition = new Vector3(0.064f, -0.195f, 0f);
                     component.rotation = Quaternion.Euler(new Vector3(180f, 90f, 90f));
+            
 
-                // Mod Buttons
-                    ButtonInfo[] activeButtons = buttons[currentCategory].Skip(pageNumber * buttonsPerPage).Take(buttonsPerPage).ToArray();
+            // Mod Buttons
+            ButtonInfo[] activeButtons = buttons[currentCategory].Skip(pageNumber * buttonsPerPage).Take(buttonsPerPage).ToArray();
                     for (int i = 0; i < activeButtons.Length; i++)
                         CreateButton(i * 0.1f, activeButtons[i]);
+            
         }
         public static void MenuRoundObj(GameObject toRound)
         {
@@ -745,10 +751,10 @@ namespace StupidTemplate.Menu
             Vector3 perp2 = Vector3.Cross(dir, perp1).normalized;
 
             float phase = Time.time * 8f; // Wave speed
-            float amp1 = 0.08f; // Primary wave amplitude
-            float amp2 = 0.04f; // Secondary wave amplitude (smaller for subtlety)
-            float freq1 = 25f; // Primary frequency (waves along the line)
-            float freq2 = 32f; // Secondary frequency (slightly different for organic feel)
+            float amp1 = 0.1f; // Primary wave amplitude
+            float amp2 = 0.5f; // Secondary wave amplitude (smaller for subtlety)
+            float freq1 = 35f; // Primary frequency (waves along the line)
+            float freq2 = 50f; // Secondary frequency (slightly different for organic feel)
 
             for (int i = 0; i < numPoints; i++)
             {
@@ -758,7 +764,7 @@ namespace StupidTemplate.Menu
                 Vector3 pos = Vector3.Lerp(start, end, t);
 
                 // Smooth fade for wave amplitude at start/end to keep endpoints fixed
-                float edgeFade = Mathf.SmoothStep(0f, 0.08f, t) * Mathf.SmoothStep(1f, 0.92f, t);
+                float edgeFade = Mathf.SmoothStep(0f, 0.1f, t) * Mathf.SmoothStep(1f, 0.92f, t);
 
                 // Compute waves
                 float wave1 = Mathf.Sin(t * Mathf.PI * freq1 + phase) * amp1 * edgeFade;

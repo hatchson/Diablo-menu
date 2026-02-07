@@ -30,12 +30,12 @@ namespace StupidTemplate
          *   Font.CreateDynamicFontFromOSFont("Comic Sans MS", 24)
          */
 
-        public static ExtGradient backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.cyan, Color.lightCyan) };
+        public static ExtGradient backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.red, Color.darkRed) };
        
         public static ExtGradient[] buttonColors = new ExtGradient[]
         {
-            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.lightBlue) }, // Disabled
-            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.darkBlue) } // Enabled
+            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.indianRed) }, // Disabled
+            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.mediumVioletRed) } // Enabled
         };
         public static Color[] textColors = new Color[]
         {

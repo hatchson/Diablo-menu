@@ -12,6 +12,6 @@ namespace StupidTemplate
 
         public void OnPlayerSpawned() =>
             Patches.PatchHandler.PatchAll();
-            Menu.BoardManager.CreateCustomBoards();
+            
     }
 }

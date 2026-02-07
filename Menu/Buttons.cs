@@ -78,7 +78,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo {buttonText = "Instant Tag All", method =() => Advantages.TagAllV2(), toolTip = "Instantly tags all players in the room."},
                 new ButtonInfo {buttonText = "Tag Gun", method =() => Advantages.TagGunv2(), toolTip = "Instantly Tags Whoever The Gun Is Shooting At"},
 
-            }
+            },
             new ButtonInfo[] {
                 new ButtonInfo {buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
                 new ButtonInfo {buttonText = "Spin Bug", method =() => Fun.BugMixer(), toolTip = "Makes the bug spin." },
