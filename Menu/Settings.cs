@@ -30,12 +30,12 @@ namespace StupidTemplate
          *   Font.CreateDynamicFontFromOSFont("Comic Sans MS", 24)
          */
 
-        public static ExtGradient backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.red, Color.darkRed) };
+        public static ExtGradient backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.red, Color.black) };
        
         public static ExtGradient[] buttonColors = new ExtGradient[]
         {
-            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.indianRed) }, // Disabled
-            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.mediumVioletRed) } // Enabled
+            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.orangeRed) }, // Disabled
+            new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.darkRed) } // Enabled
         };
         public static Color[] textColors = new Color[]
         {
@@ -57,5 +57,36 @@ namespace StupidTemplate
         public static int buttonsPerPage = 8;
 
         public static float gradientSpeed = 0.5f; // Speed of colors
+        public static void lightmenu()
+        {
+           backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.lightCyan, Color.lightBlue) };
+            buttonColors = new ExtGradient[]
+            {
+                new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.cyan) }, // Disabled
+                new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.blue) } // Enabled
+            };
+             textColors = new Color[]
+            {
+                Color.white, // Disabled
+                Color.white // Enabled
+            };
+
+        }
+        public static void normalmenu()
+        {
+            backgroundColor = new ExtGradient { colors = ExtGradient.GetSimpleGradient(Color.red, Color.black) };
+            buttonColors = new ExtGradient[]
+                {
+                    new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.orangeRed) }, // Disabled
+                    new ExtGradient { colors = ExtGradient.GetSolidGradient(Color.darkRed) } // Enabled
+                };
+                textColors = new Color[]
+                {
+                    Color.white, // Disabled
+                    Color.white // Enabled
+                };
+
+        }
     }
+    
 }

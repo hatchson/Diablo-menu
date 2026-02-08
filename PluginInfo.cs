@@ -4,7 +4,7 @@
     {
         public const string GUID = "org.iidk.gorillatag.menutemplate";
         public const string Name = "Diablo Menu";
-        public const string Description = "Created by @goldentrophy with love <3";
-        public const string Version = "1.9.5";
+        public const string Description = "Credits to iiDk for the menu temp";
+        public const string Version = "1.0.6";
     }
 }

@@ -31,6 +31,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Safety Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the safety mods tab."},
                 new ButtonInfo { buttonText = "Advantages", method =() => currentCategory = 7, isTogglable = false, toolTip = "Opens the advantages tab."},
                 new ButtonInfo { buttonText = "Fun", method =() => currentCategory = 8, isTogglable = false, toolTip = "Fun Mods."},
+                new ButtonInfo { buttonText = "Visual", method =() => currentCategory = 9, isTogglable = false, toolTip = "Visual Mods."},
             },
 
             new ButtonInfo[] { // Settings [1]
@@ -45,7 +46,8 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Notifications", enableMethod =() => disableNotifications = false, disableMethod =() => disableNotifications = true, enabled = !disableNotifications, toolTip = "Toggles the notifications."},
                 new ButtonInfo { buttonText = "FPS Counter", enableMethod =() => fpsCounter = true, disableMethod =() => fpsCounter = false, enabled = fpsCounter, toolTip = "Toggles the FPS counter."},
                 new ButtonInfo { buttonText = "Disconnect Button", enableMethod =() => disconnectButton = true, disableMethod =() => disconnectButton = false, enabled = disconnectButton, toolTip = "Toggles the disconnect button."},
-                new ButtonInfo { buttonText = "Click Gui", enableMethod =() => useClickGuiLayout = true, disableMethod =() => useClickGuiLayout = false, enabled = useClickGuiLayout, toolTip = "Toggles a euphoria like click gui this is also similar to iis stupid menu click gui."},
+                new ButtonInfo { buttonText = "Light Menu", enableMethod =() => Settings.lightmenu(), disableMethod =() => Settings.normalmenu(), toolTip = "Makes the menu a light blue."},
+                
             },
 
             new ButtonInfo[] { // Movement Settings [3]
@@ -76,8 +78,11 @@ namespace StupidTemplate.Menu
             new ButtonInfo[] {
                 new ButtonInfo {buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
                 new ButtonInfo {buttonText = "Tag Self", method =() => Advantages.TagSelf(), toolTip = "Tags Yourself." },
-                new ButtonInfo {buttonText = "Instant Tag All", method =() => Advantages.TagAllV2(), toolTip = "Instantly tags all players in the room."},
+                new ButtonInfo {buttonText = "Instant Tag All", method =() => Advantages.TagAllV2(), isTogglable = false,toolTip = "Instantly tags all players in the room."},
                 new ButtonInfo {buttonText = "Tag Gun", method =() => Advantages.TagGunv2(), toolTip = "Instantly Tags Whoever The Gun Is Shooting At"},
+                new ButtonInfo {buttonText = "Tag Aura", method =() => Advantages.TagAuraTuff(), toolTip = "Tags people in an aura around you"},
+                new ButtonInfo {buttonText = "Tag Reach", method =() => Advantages.TagReach(), toolTip = "gives you a reach for tagging people, the reach is in a circle around your hand"},
+                
 
             },
             new ButtonInfo[] {
@@ -88,6 +93,12 @@ namespace StupidTemplate.Menu
                 new ButtonInfo {buttonText = "Bug Head", method =() => Fun.BugHead(), toolTip = "Makes The Bug Teleport To the bottom of your body "},
                 new ButtonInfo {buttonText = "Bug Spaz", method =() => Fun.BugSpaz(), toolTip = "Makes The Bug spaz, use this with telekineses bug to make the bug not be able to move around"},
                 
+            }, 
+            new ButtonInfo[]
+            {
+                new ButtonInfo {buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
+                new ButtonInfo {buttonText = "Box Esp", method =() => Visual.BoxEsp(), isTogglable = true,  toolTip = "Puts a box esp around everyone in the lobby."},
+
             }
         };
     }

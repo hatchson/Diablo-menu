@@ -24,59 +24,85 @@ namespace StupidTemplate.Mods
         {
             if (ControllerInputPoller.instance.leftGrab)
             {
-                if (ControllerInputPoller.instance.leftGrabRelease)
+                if (platl == null)
                 {
-
-
-                    if (platl == null)
-                    {
-                        platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                        platl.transform.position = TrueLeftHand().position;
-                        platl.transform.rotation = TrueLeftHand().rotation;
-
-                        FixStickyColliders(platl);
-
-                        ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
-                        colorChanger.colors = StupidTemplate.Settings.backgroundColor;
-                    }
-
-                    else
-                    {
-                        if (platl != null)
-                        {
-                            Object.Destroy(platl);
-                            platl = null;
-                        }
-                    }
+                    platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                    platl.transform.position = GorillaTagger.Instance.leftHandTransform.position;
+                    platl.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
+                    platl.GetComponent<Renderer>().material.color = Color.lightBlue;
                 }
-                if (ControllerInputPoller.instance.rightGrab)
+            }
+            else
+            {
+                if (platl != null)
                 {
+                    UnityEngine.Object.Destroy(platl);
+                    platl = null;
+                }
+            }
 
-                    if (ControllerInputPoller.instance.rightGrabRelease)
-                    {
+            if (ControllerInputPoller.instance.rightGrab)
+            {
+                if (platr == null)
+                {
+                    platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                    platr.transform.position = GorillaTagger.Instance.rightHandTransform.position;
+                    platr.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
+                    platr.GetComponent<Renderer>().material.color = Color.lightCyan;
+                }
+            }
+            else
+            {
+                if (platr != null)
+                {
+                    UnityEngine.Object.Destroy(platr);
+                    platr = null;
+                }
+            }
+        }
 
-                        if (platr == null)
-                        {
-                            platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                            platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                            platr.transform.position = TrueRightHand().position;
-                            platr.transform.rotation = TrueRightHand().rotation;
+        public static void InvisPlatforms()
+        {
+            if (ControllerInputPoller.instance.leftGrab)
+            {
+                if (platl == null)
+                {
+                    platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                    platl.transform.position = GorillaTagger.Instance.leftHandTransform.position;
+                    platl.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
+                    Object.Destroy(platl.GetComponent<Renderer>());
 
-                            FixStickyColliders(platr);
+                }
+            }
+            else
+            {
+                if (platl != null)
+                {
+                    UnityEngine.Object.Destroy(platl);
+                    platl = null;
+                }
+            }
 
-                            ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
-                            colorChanger.colors = StupidTemplate.Settings.backgroundColor;
-                        }
-                        else
-                        {
-                            if (platr != null)
-                            {
-                                Object.Destroy(platr);
-                                platr = null;
-                            }
-                        }
-                    }
+            if (ControllerInputPoller.instance.rightGrab)
+            {
+                if (platr == null)
+                {
+                    platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                    platr.transform.position = GorillaTagger.Instance.rightHandTransform.position;
+                    platr.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
+                    Object.Destroy(platr.GetComponent<Renderer>());
+                }
+            }
+            else
+            {
+                if (platr != null)
+                {
+                    UnityEngine.Object.Destroy(platr);
+                    platr = null;
                 }
             }
         }
@@ -88,7 +114,7 @@ namespace StupidTemplate.Mods
             {
                 var GunData = RenderGun();
                 GameObject NewPointer = GunData.NewPointer;
-                gunLocked = false;
+                
 
                 if (ControllerInputPoller.TriggerFloat(XRNode.RightHand) > 0.5f && !previousTeleportTrigger)
                 {

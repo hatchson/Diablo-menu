@@ -338,20 +338,30 @@ namespace StupidTemplate.Mods
             if (ControllerInputPoller.instance.rightGrab)
             {
                 var GunData = RenderGun();
-                GameObject NewPointer = GunData.NewPointer;
-                gunLocked = true;
+                RaycastHit Ray = GunData.Ray;
 
-                if (ControllerInputPoller.TriggerFloat(XRNode.RightHand) > 0.5f)
+                if (gunLocked && lockTarget != null)
                 {
+
                     TagPlayerv2(lockTarget);
+
+
                 }
 
+                if (!ControllerInputPoller.instance.rightGrab) return;
+                VRRig gunTarget = Ray.collider.GetComponentInParent<VRRig>();
+                if (!gunTarget || gunTarget.isLocal) return;
+                if (!PhotonNetwork.IsMasterClient) return;
+                gunLocked = true;
+                lockTarget = gunTarget;
             }
             else
             {
-                GameObject.Destroy(RenderGun().NewPointer);
+                if (gunLocked)
+                    gunLocked = false;
             }
         }
+            
 
 
 

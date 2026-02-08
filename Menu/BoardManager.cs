@@ -65,9 +65,9 @@ namespace StupidTemplate.Menu
             CoCText = "Using Diablo Menu:  Free \n" +
             " ==============================================\n" +
             " \n Meanings Of Symbols: \n" +
-            "  W = Working \n  NW = Not Working  \n  D = Detected  \n  UND = Undetected  \n  DB = Delay Ban  \n \n Enjoy The Menu, Version " + PluginInfo.Version;
+            "  NW = Not Working  \n This menu is undetected and all of its mods are as well \n Made with love by hatchson \n Enjoy The Menu, Version " + PluginInfo.Version;
 
-            ScreenText = "Welcome Back: " + "[ " + PhotonNetwork.NickName + " ]\n Dont Get Banned Thats All On You";
+            ScreenText = "Welcome Back: " + "[ " + PhotonNetwork.NickName + " ]\n Dont Get Banned thats nothing the devil can fix";
 
 
         }
