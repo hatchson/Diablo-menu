@@ -49,6 +49,7 @@ namespace StupidTemplate
         public static bool disconnectButton = true;
         public static bool rightHanded;
         public static bool disableNotifications;
+        public static bool useClickGuiLayout = false;
 
         public static KeyCode keyboardButton = KeyCode.Q;
 

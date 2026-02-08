@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using System.ComponentModel;
 using static StupidTemplate.Menu.BoardManager;
 
 namespace StupidTemplate
@@ -9,7 +10,7 @@ namespace StupidTemplate
     {
         private void Awake() =>
             GorillaTagger.OnPlayerSpawned(OnPlayerSpawned);
-
+        
         public void OnPlayerSpawned() =>
             Patches.PatchHandler.PatchAll();
             

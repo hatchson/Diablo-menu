@@ -24,8 +24,10 @@ namespace StupidTemplate.Mods
         {
             if (ControllerInputPoller.instance.leftGrab)
             {
-                if (!ControllerInputPoller.instance.leftGrab)
+                if (ControllerInputPoller.instance.leftGrabRelease)
                 {
+
+
                     if (platl == null)
                     {
                         platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -38,42 +40,45 @@ namespace StupidTemplate.Mods
                         ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
                         colorChanger.colors = StupidTemplate.Settings.backgroundColor;
                     }
-                }
-                else
-                {
-                    if (platl != null)
-                    {
-                        Object.Destroy(platl);
-                        platl = null;
-                    }
-                }
-            }
 
-            if (ControllerInputPoller.instance.rightGrab)
-            {
-                if (!ControllerInputPoller.instance.rightGrab)
-                    if (platr == null)
-                    {
-                        platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                        platr.transform.position = TrueRightHand().position;
-                        platr.transform.rotation = TrueRightHand().rotation;
-
-                        FixStickyColliders(platr);
-
-                        ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
-                        colorChanger.colors = StupidTemplate.Settings.backgroundColor;
-                    }
                     else
                     {
-                        if (platr != null)
+                        if (platl != null)
                         {
-                            Object.Destroy(platr);
-                            platr = null;
+                            Object.Destroy(platl);
+                            platl = null;
                         }
                     }
+                }
+                if (ControllerInputPoller.instance.rightGrab)
+                {
+
+                    if (ControllerInputPoller.instance.rightGrabRelease)
+                    {
+
+                        if (platr == null)
+                        {
+                            platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                            platr.transform.position = TrueRightHand().position;
+                            platr.transform.rotation = TrueRightHand().rotation;
+
+                            FixStickyColliders(platr);
+
+                            ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
+                            colorChanger.colors = StupidTemplate.Settings.backgroundColor;
+                        }
+                        else
+                        {
+                            if (platr != null)
+                            {
+                                Object.Destroy(platr);
+                                platr = null;
+                            }
+                        }
+                    }
+                }
             }
-        
         }
 
         public static bool previousTeleportTrigger;
@@ -91,6 +96,10 @@ namespace StupidTemplate.Mods
                 }
 
                 previousTeleportTrigger = ControllerInputPoller.TriggerFloat(XRNode.RightHand) > 0.5f;
+            }
+            else
+            {
+                GameObject.Destroy(RenderGun().NewPointer);
             }
         }
     }

@@ -335,18 +335,20 @@ namespace StupidTemplate.Mods
 
         public static void TagGunv2()
         {
-            var gunData = gunLocked; 
-
-            if (gunData != null)
+            if (ControllerInputPoller.instance.rightGrab)
             {
-                VRRig hitPlayer = lockTarget;
-                string playerMatName = hitPlayer.mainSkin.material.name;
-                bool canTag = !playerMatName.Contains("it") && !playerMatName.Contains("fected");
+                var GunData = RenderGun();
+                GameObject NewPointer = GunData.NewPointer;
 
-                if (canTag)
+                if (ControllerInputPoller.TriggerFloat(XRNode.RightHand) > 0.5f)
                 {
-                    TagPlayerv2(hitPlayer);
+                    TagPlayerv2(lockTarget);
                 }
+
+            }
+            else
+            {
+                GameObject.Destroy(RenderGun().NewPointer);
             }
         }
 
